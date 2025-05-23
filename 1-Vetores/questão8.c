@@ -7,14 +7,13 @@ escreva um terceiro conjunto fruto da intercalação dos dois primeiros.   */
 int conjunto1[X], conjunto2[X], conjunto3[X];
 int main(){
     printf("conjunto1[%i]:", X);
-    for(int i=0
-        ;i<=X;i++){
-        conjunto1[i]=i;
+    for(int i=0;i<=X;i++){
+        conjunto1[i]=rand()%20;
         printf("%i ", conjunto1[i]);
     }
      printf("\nconjunto2[%i]:",X);
     for(int i=0;i<=X;i++){
-        conjunto2[i]=-i;
+        conjunto2[i]=-rand()%20;
         printf("%i ", conjunto2[i]);
     }
     printf("\nconjunto3[%i]:", X);
