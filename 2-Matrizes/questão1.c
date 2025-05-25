@@ -6,13 +6,13 @@ e cada bloco contém os números de 1 a 9 somente uma vez).*/
 
 #define TAMANHO 9
 
-// Função para verificar se uma linha contém números de 1 a 9 sem repetição
+
 int verificarLinha(int matriz[TAMANHO][TAMANHO]) {
     for (int i = 0; i < TAMANHO; i++) {
         int ocorrencias[TAMANHO + 1] = {0};
         for (int j = 0; j < TAMANHO; j++) {
             if (ocorrencias[matriz[i][j]] != 0) {
-                return 0; // Número repetido encontrado
+                return 0; 
             }
             ocorrencias[matriz[i][j]] = 1;
         }
@@ -20,13 +20,13 @@ int verificarLinha(int matriz[TAMANHO][TAMANHO]) {
     return 1;
 }
 
-// Função para verificar se uma coluna contém números de 1 a 9 sem repetição
+
 int verificarColuna(int matriz[TAMANHO][TAMANHO]) {
     for (int j = 0; j < TAMANHO; j++) {
         int ocorrencias[TAMANHO + 1] = {0};
         for (int i = 0; i < TAMANHO; i++) {
             if (ocorrencias[matriz[i][j]] != 0) {
-                return 0; // Número repetido encontrado
+                return 0; 
             }
             ocorrencias[matriz[i][j]] = 1;
         }
@@ -34,7 +34,7 @@ int verificarColuna(int matriz[TAMANHO][TAMANHO]) {
     return 1;
 }
 
-// Função para verificar se cada bloco 3x3 contém números de 1 a 9 sem repetição
+
 int verificarBloco(int matriz[TAMANHO][TAMANHO]) {
     for (int blocoLinha = 0; blocoLinha < TAMANHO; blocoLinha += 3) {
         for (int blocoColuna = 0; blocoColuna < TAMANHO; blocoColuna += 3) {
@@ -43,7 +43,7 @@ int verificarBloco(int matriz[TAMANHO][TAMANHO]) {
                 for (int j = 0; j < 3; j++) {
                     int num = matriz[blocoLinha + i][blocoColuna + j];
                     if (ocorrencias[num] != 0) {
-                        return 0; // Número repetido encontrado
+                        return 0;
                     }
                     ocorrencias[num] = 1;
                 }
@@ -53,7 +53,7 @@ int verificarBloco(int matriz[TAMANHO][TAMANHO]) {
     return 1;
 }
 
-// Função principal para validar o Sudoku
+
 int validarSudoku(int matriz[TAMANHO][TAMANHO]) {
     return verificarLinha(matriz) && verificarColuna(matriz) && verificarBloco(matriz);
 }
